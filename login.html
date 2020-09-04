@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Neumorphism HTML CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&dispplay=swap" /> -->
+</head>
+
+<body>
+
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+
+    <div class="container-login">
+        <div class="logo">
+            <img src="assets/shield.svg" alt="">
+        </div>
+        <div class="title">Yhotie.com</div>
+        <!-- <div class="sub-title">Guard</div> -->
+
+        <!-- options button -->
+        <div class="btn-container">
+            <button class="btn-option" onclick="voucher();">Voucher</button>
+            <button class="btn-option" onclick="member();">Member</button>
+        </div>
+        <!-- end options button -->
+
+        <!-- box info login -->
+        <div class="box" id="infologin">
+        </div>
+        <!-- box info login -->
+
+        <form class="custom-fields" name="login" autocomplete="off" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <div class="username-field">
+                <input type="username" name="username" class="username-input" placeholder="username"
+                    value="$(username)" />
+            </div>
+            <div class="password-field">
+                <input name="password" placeholder="password" class="password-input" type="hidden" />
+            </div>
+            <button class="btn-submit" type="submit">Login</button>
+        </form>
+
+        $(if trial == 'yes')
+        <div class="link">Gratis <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik
+                di sini</a></div>
+        $(endif)
+
+        $(if error)<div class="notice">$(error)</div>$(endif)
+        <!-- <div class="link">
+            <a href="#">Forgot Password?</a> or <a href="#">Sign up</a>
+        </div> -->
+
+        <div class="link">
+            <a href="#">Telegram : </a> balinux
+        </div>
+
+        <!-- Scroll item -->
+        <!-- <div class="horizontal-scroll-wrapper squares">
+            <div>item 1</div>
+            <div>item 2</div>
+            <div>item 3</div>
+            <div>item 4</div>
+            <div>item 5</div>
+            <div>item 6</div>
+            <div>item 7</div>
+            <div>item 8</div>
+        </div> -->
+        <!-- End scroll item -->
+
+        <!-- menu item -->
+        <div class="menu-items">
+
+            <div class="row-items">
+                <div class="title"> 4 jam</div>
+                <div class="title"> Rp. 2000</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> 30 hari</div>
+                <div class="title"> Rp 25.000</div>
+            </div>
+        </div>
+        <!-- menu item -->
+
+        <!-- footer mohon jangan di hilangkan-->
+        <div class="link">
+            <a href="http://yhotie.com">Made with</a> &#10084; <a href="http://yhotie.com">by Yho Tie</a>
+        </div>
+        <!-- footer -->
+    </div>
+
+    <script type="text/javascript">
+        var hostname = window.location.hostname;
+        document.getElementById('title').innerHTML = hostname + " > login";
+
+        document.login.username.focus();
+
+        var infologin = document.getElementById('infologin');
+        infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+
+        // login page 2 mode by Laksamadi Guko
+        var username = document.login.username;
+        var password = document.login.password;
+
+        username.placeholder = "Kode Voucher";
+
+        // set password = username
+        function setpass() {
+            var user = username.value
+            //user = user.toLowerCase();
+            username.value = user;
+            password.value = user;
+        }
+
+        username.onkeyup = setpass;
+
+        // change to voucher mode
+        function voucher() {
+            username.focus();
+            username.onkeyup = setpass;
+            username.placeholder = "Kode Voucher";
+            username.style = "border-radius:3px;"
+            password.type = "hidden";
+            infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+        }
+
+        // change to member mode
+        function member() {
+            username.focus();
+            username.onkeyup = "";
+            username.placeholder = "Username";
+            username.style = "border-radius:3px 3px 0px 0px;"
+            password.type = "password";
+            infologin.innerHTML = "Masukkan Username dan Password kemudian klik login.";
+        }
+    </script>
+</body>
+
+</html>

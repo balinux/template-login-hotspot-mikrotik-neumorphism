@@ -1,0 +1,224 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./font/Lato-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    height: 100vh;
+    widows: 100vh;
+    overflow: hidden;
+    font-family: 'Lato',sans-serif;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    background-color: #ecf0f3;
+}
+
+.container-login{
+    width: 350px;
+    padding: 40px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    overflow: hidden;
+    box-shadow: 13px 13px 20px #c0ced1,
+                -13px -13px 20px #ffffff;
+}
+
+.logo{
+    width: 80px ;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 0px 0px 2px #00DD80, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaaf, -8px -8px 15px #ffffff;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+}
+
+.title{
+    text-align: center;
+    font-size: 17px;
+    padding-top: 24px;
+    letter-spacing: 0.5px;
+}
+
+.sub-title{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.custom-fields{
+    width: 100%;
+    padding: 20px 5px 5px 5px;
+}
+
+.custom-fields input{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 13px;
+    color: #555;
+    padding: 15px 6px 15px 2px;
+}
+
+.username-field, .password-field{
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 0px 0px 0px 7px;
+    box-shadow: inset 5px 5px 5px #cbccd1, inset -5px -5px 5px #ffffff;
+}
+
+.btn-submit{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-align: center;
+    background-color: #24cfaa;
+    box-shadow: 3px 3px 8px #b1b1b1, -6px -6px 8px #ffffff;
+}
+
+.btn-submit:hover{
+    background-color: #2fdbb6;
+}
+
+.btn-submit:active{
+    background-color: #1da88a;
+}
+
+.btn-logout{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-align: center;
+    background-color: #f55252;
+    margin-top: 10px;
+    box-shadow: 3px 3px 8px #b1b1b1, -6px -6px 8px #ffffff;
+}
+
+.btn-logout:hover{
+    background-color: #ff4848;
+}
+
+.btn-logout:active{
+    background-color: #eb5c5c;
+}
+
+.link{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link a{
+    color: #aaa;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btn-container{
+    width: 100%;
+    padding: 30px 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.btn-container .btn-option{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-align: center;
+    background-color: #24cfaa;
+    box-shadow: 3px 3px 8px #b1b1b1, -6px -6px 8px #ffffff;
+}
+
+/* .horizontal-scroll-wrapper {
+    width: 100px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform:rotate(-90deg) translateY(-100px);
+    transform-origin: right top;
+  }
+
+  .horizontal-scroll-wrapper > div {
+    width: 100px;
+    height: 100px;
+    transform: rotate(90deg);
+    transform-origin: right top; 
+  } */
+
+  .menu-items{
+      margin-top: 15px;
+      width: 100%;
+      padding: 0px 10px;
+      padding-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 3px 3px 8px #b1b1b1, -6px -6px 8px #ffffff;
+  }
+  .row-items{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .row-items .title, .row-items .price{
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    opacity: 0.85;
+  }
+
+  .box{
+      padding-top: 15px;
+      opacity: 0.6;
+      font-size: 12px;
+      text-align: center;
+  }
+
+  .notice{
+    padding-top: 15px;
+    opacity: 0.6;
+    font-size: 12px;
+    text-align: center;
+    color: coral;
+}
