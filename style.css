@@ -3,12 +3,12 @@
 }
 
 @font-face {
-    font-family: 'Lato';
-    src: url('./font/Lato-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+font-family: 'Lato';
+src: url('./font/Lato-Regular.ttf');
+font-weight: normal;
+font-style: normal;
 }
-
+  
 body{
     height: 100vh;
     widows: 100vh;
@@ -185,6 +185,7 @@ body{
 
   .menu-items{
       margin-top: 15px;
+      margin-bottom: 15px;
       width: 100%;
       padding: 0px 10px;
       padding-bottom: 15px;
@@ -206,6 +207,13 @@ body{
     font-size: 12px;
     font-family: 'Lato', sans-serif;
     opacity: 0.85;
+  }
+
+  .row-items .title-exp{
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    opacity: 0.85;
+    padding-top: 5px;
   }
 
   .box{
