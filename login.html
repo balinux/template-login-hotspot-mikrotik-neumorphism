@@ -9,6 +9,12 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&dispplay=swap" /> -->
 </head>
 
+<script>
+    var error = "$(error)";
+    if ((error == "user $(username) has reached uptime limit") || (error == "kode voucher/user $(username) sudah mencapai batas waktu")) {
+        window.location.href = "./expired.html";
+    }
+</script>
 <body>
 
     $(if chap-id)
@@ -82,7 +88,7 @@
             <div>item 1</div>
             <div>item 2</div>
             <div>item 3</div>
-            <div>item 4</div>
+       f     <div>item 4</div>
             <div>item 5</div>
             <div>item 6</div>
             <div>item 7</div>
