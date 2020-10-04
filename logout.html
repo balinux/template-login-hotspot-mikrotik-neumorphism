@@ -1,73 +1,83 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>mikrotik hotspot > logout</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
-<style type="text/css">
-<!--
-textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px #BBBBBB solid;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
-}
-
-.tabula{
- 
-border-width: 1px; 
-border-collapse: collapse; 
-border-color: #c1c1c1; 
-background-color: transparent;
-font-family: verdana;
-font-size: 11px;
-}
-
-body{ color: #737373; font-size: 12px; font-family: verdana; }
-
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 12px; padding: 4px;}
-
--->
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Yohtie.com Neumorphism | Logout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&dispplay=swap" />
 </head>
 
-<body>
 <script language="JavaScript">
-<!--
+
     function openLogin() {
 	if (window.name != 'hotspot_logout') return true;
 	open('$(link-login)', '_blank', '');
 	window.close();
 	return false;
     }
-//-->
+
 </script>
 
-<table width="100%" height="100%">
+<body>
+    <div class="container-login">
+        <div class="logo">
+            <img src="assets/shield.svg" alt="">
+        </div>
+        <div class="title">Yhotie.com</div>
+        <div class="sub-title">Anda telah keluar dari hotspot</div>
 
-<tr>
-<td align="center" valign="middle">
-<b>you have just logged out</b> <br><br>
-<table class="tabula" border="1">  
-<tr><td align="right">user name</td><td>$(username)</td></tr>
-<tr><td align="right">IP address</td><td>$(ip)</td></tr>
-<tr><td align="right">MAC address</td><td>$(mac)</td></tr>
-<tr><td align="right">session time</td><td>$(uptime)</td></tr>
-$(if session-time-left)
-<tr><td align="right">time left</td><td>$(session-time-left)</td></tr>
-$(endif)
-<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
-</table>
-<br>
-<form action="$(link-login)" name="login" onSubmit="return openLogin()">
-<input type="submit" value="log in">
-</form>
-</td>
-</table>
+        <!-- menu item -->
+        <div class="menu-items">
+
+            <div class="row-items">
+                <div class="title"> Ip Address</div>
+                <div class="title"> $(ip)</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> Mac Address</div>
+                <div class="title"> $(mac)</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> Upload</div>
+                <div class="title"> $(bytes-in-nice)</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> Download</div>
+                <div class="title"> $(bytes-out-nice)</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> Terkoneksi</div>
+                <div class="title"> $(uptime)</div>
+            </div>
+            $(if remain-bytes-total)
+            <div class="row-items">
+                <div class="title"> Sisa Quota</div>
+                <div class="title"> $(remain-bytes-total-nice)</div>
+            </div>
+            $(endif)
+            $(if session-time-left)
+            <div class="row-items">
+                <div class="title"> Sisa Waktu</div>
+                <div class="title"> $(session-time-left)</div>
+            </div>
+            $(endif)
+        </div>
+        <!-- menu item -->
+
+        <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+        <button class="btn-submit" type="submit">Login Kembali</button>
+        </form>
+
+        <!-- footer mohon jangan di hilangkan-->
+        <div class="link">
+            <a href="http://yhotie.com">Made with</a> &#10084; <a href="http://yhotie.com">by Yho Tie</a> 
+        </div>
+        <!-- footer -->
+    </div>
 </body>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > logout";
+</script>
 </html>
