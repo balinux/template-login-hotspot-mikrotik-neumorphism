@@ -1,33 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title id="title"></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="theme-color" content="#3B5998" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
-<link rel="stylesheet" href="style.css">
-$(if refresh-timeout)
-<script>
-	setTimeout(function(){
-	location.href = './status';
-	},4000)
-</script>
-$(endif)
-</head>
-<body>
-<div class="main">
+<html lang="en">
 
-$(if login-by == 'trial')
-		<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:150px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3>trial user</h3></div><br>
-	$(elif login-by != 'mac')
-		<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:150px;" class="icon icon-user-circle-o">&#xf2be;</i><br> <h3 id="user">$(username)</h3></div><br>
-$(endif)
-<h3>Anda telah terhubung di jaringan <br /><b id="dname"></b></h3>
-<button class="button" onclick="window.location='./status'"><i class="icon icon-check">&#xe807;</i> Check Status</buton>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">success Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&dispplay=swap" />
+    $(if refresh-timeout)
+    <script>
+        setTimeout(function(){
+        location.href = './status';
+        },4000)
+    </script>
+    $(endif)
+</head>
+
+<body>
+    <div class="container-login">
+        <div class="logo">
+            <img src="assets/shield.svg" alt="">
+        </div>
+        <div class="title">Yhotie.com</div>
+        $(if login-by == 'trial')
+        <div class="sub-title">Selamat Datang, Pengguna Trial</div>
+    	$(elif login-by != 'mac')
+        <div class="sub-title">Selamat Datang, $(username)</div>
+        $(endif)
+        <!-- <div class="sub-title">Guard</div> -->
+
+        <!-- menu item -->
+        <div class="menu-items">
+
+            <div class="row-items">
+                <div class="title-success"> Anda telah terhubung di jaringan <b>vue.net</b>.</div>
+            </div>
+
+        </div>
+        <!-- menu item -->
+
+        <button class="btn-submit" id="login" onclick="status();">Check Status</button>
+
+
+        <!-- footer mohon jangan di hilangkan-->
+        <div class="link">
+            <a href="http://yhotie.com">Made with</a> &#10084; <a href="http://yhotie.com">by Yho Tie</a> 
+        </div>
+        <!-- footer -->
+    </div>
+</body>
+
+<script>
+    function status() {
+        console.log(" go to status");
+        window.location.href = "./status.html";
+    }
+</script>
+
 <script type="text/javascript">
 	document.getElementById('title').innerHTML = window.location.hostname + " > success";	
     document.getElementById('dname').innerHTML = window.location.hostname;	
 </script>
-</body>
 </html>

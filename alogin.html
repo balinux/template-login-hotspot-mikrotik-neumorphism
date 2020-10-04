@@ -1,49 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>mikrotik hotspot > redirect</title>
-<meta http-equiv="refresh" content="2; url=$(link-redirect)">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
-<style type="text/css">
-<!--
-textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px #BBBBBB solid;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
-}
-
-body{ color: #737373; font-size: 12px; font-family: verdana; }
-
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 12px; color: #7A7A7A; }
-
--->
-</style>
-<script language="JavaScript">
-<!--
-    function startClock() {
-        $(if popup == 'true')
-        open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
-	$(endif)
-	location.href = '$(link-redirect)';
-    }
-//-->
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">success Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&dispplay=swap" />
+    $(if refresh-timeout)
+    <script>
+        setTimeout(function(){
+        location.href = './status';
+        },4000)
+    </script>
+    $(endif)
 </head>
-<body onLoad="startClock()">
-<table width="100%" height="100%">
-<tr>
-	<td align="center" valign="middle">
-	You are logged in
-	<br><br>
-	If nothing happens, click <a href="$(link-redirect)">here</a></td>
-</tr>
-</table>
+
+<body>
+    <div class="container-login">
+        <div class="logo">
+            <img src="assets/shield.svg" alt="">
+        </div>
+        <div class="title">Yhotie.com</div>
+        $(if login-by == 'trial')
+        <div class="sub-title">Selamat Datang, Pengguna Trial</div>
+    	$(elif login-by != 'mac')
+        <div class="sub-title">Selamat Datang, $(username)</div>
+        $(endif)
+        <!-- <div class="sub-title">Guard</div> -->
+
+        <!-- menu item -->
+        <div class="menu-items">
+
+            <div class="row-items">
+                <div class="title-success"> Anda telah terhubung di jaringan <b>vue.net</b>.</div>
+            </div>
+
+        </div>
+        <!-- menu item -->
+
+        <button class="btn-submit" id="login" onclick="status();">Check Status</button>
+
+
+        <!-- footer mohon jangan di hilangkan-->
+        <div class="link">
+            <a href="http://yhotie.com">Made with</a> &#10084; <a href="http://yhotie.com">by Yho Tie</a> 
+        </div>
+        <!-- footer -->
+    </div>
 </body>
+
+<script>
+    function status() {
+        console.log(" go to status");
+        window.location.href = "./status.html";
+    }
+</script>
+
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > success";	
+    document.getElementById('dname').innerHTML = window.location.hostname;	
+</script>
 </html>
