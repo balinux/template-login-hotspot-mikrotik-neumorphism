@@ -10,9 +10,9 @@ font-style: normal;
 }
   
 body{
-    height: 100vh;
+    height: auto;
     widows: 100vh;
-    overflow: hidden;
+    overflow: scroll;
     font-family: 'Lato',sans-serif;
     display: flex;
     font-weight: 700;
@@ -23,6 +23,7 @@ body{
 }
 
 .container-login{
+    margin-top: 30px;
     width: 350px;
     padding: 40px 35px 35px 35px;
     border-radius: 40px;

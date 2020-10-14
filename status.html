@@ -48,7 +48,7 @@
         </div>
         $(elif login-by != 'mac')
         <div style="margin-top:20px; text-align: center;">
-            <h3 id="user">Selamat datang $(username)</h3>
+            <h3 id="user">$(username)</h3>
         </div>
         $(endif)
         <!-- check trial akun -->
@@ -101,7 +101,8 @@
             $(endif)
             <div class="row-items">
                 <div class="title"> Expired</div>
-                <div class="title" id="exp"></div>
+                <div class="title"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"
+                    style="height: 35px; margin: 0px 0px 0px 70px; overflow: hidden; padding-top: 10px;"></iframe></div>
             </div>
         </div>
         <!-- menu item -->
@@ -136,7 +137,6 @@
             
     </script>
         <!-- expired setup -->
-    
 </body>
 
 </html>
